@@ -124,7 +124,9 @@ const (
 
 // RetryPolicy is a type of Policy
 type RetryPolicy interface {
-	RetryOn() bool
+	RetryOn() string
+
+	RetriableStatusCodes() []uint32
 
 	TryTimeout() time.Duration
 
